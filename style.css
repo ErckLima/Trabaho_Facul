@@ -112,8 +112,7 @@ body{
 
     display: grid;
     grid-template-areas: 
-    'filtro fotos fotos';
-    grid-template-columns: 200px auto auto;
+    'filtro fotos';
 }
 
 .filtro{
@@ -122,7 +121,9 @@ body{
     background-color: var(--Cinza_escuro);
     border-radius: 5px;
     padding: 10px;
-    border: 1px solid var(--Cinza_escuro);
+    border: 1px solid var(--Cinza_claro);
+    max-height: 320px;
+    margin-top: 40px;
 
     
 }
@@ -130,7 +131,6 @@ label{
     margin-top: 20px;
 }
 .filtro form{
-    padding-left: 10px;
     margin: auto;
     display: grid;
     
@@ -145,12 +145,15 @@ label{
     padding: 0%;
 }
 .filtro button{
+    margin-top: 9px;
     max-width: 150px;
+    border-radius: 10px;
 }
+
 
 .fotos{
     grid-area: fotos;
-
+    
     padding: 20px;
 
 
@@ -165,6 +168,7 @@ label{
     max-width: 200px;
     text-align: center;
     padding: 2px;
+    margin: 20px;
     
 }
 .dados_prod{
@@ -174,9 +178,10 @@ label{
     
 }
 .cards{
-    display: grid;
-    grid-template-columns: auto auto auto auto;
-    gap: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
 }
 
 
@@ -218,8 +223,12 @@ label{
 
 
 
+.hover_cinza:hover{
+    background-color: var(--Cinza_escuro);
+    color: #ffffff;
+}
 
-@media only screen and (max-width: 700px) {
+@media only screen and (max-width: 500px) {
     .cards{
         display: grid;
         grid-template-columns: auto auto;
@@ -237,6 +246,7 @@ label{
         'filtro'
         'fotos';
         grid-template-columns: auto;
+        place-items: center;
     }
     .filtro form{
         margin: auto;
@@ -256,4 +266,11 @@ label{
         min-width: 150px;
         margin: auto;
     }
+    .footer{
+        display: none;
+    }
+    .filtro{
+        max-width: 300px;
+    }
+
 }
