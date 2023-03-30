@@ -26,13 +26,15 @@ body{
     background-color: var(--Cinza_claro);
     padding: 5px;
     min-height: 100vh;
-    display: grid;
-    grid-template-areas: 
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    /* grid-template-areas: 
     'cabeca cabeca cabeca cabeca'
     'header header header header'
     'section section section section'
-    'footer footer footer footer';
-    grid-template-rows: 130px auto auto auto;
+    'footer footer footer footer'; */
+    /* grid-template-rows: 130px auto auto auto; */
 }
 
 
@@ -40,23 +42,29 @@ body{
 
 
 .cabecalho{
-    background-color: var(--Cinza_claro);
-    grid-area: cabeca;
+    background-color: #706f6f;
+    border-radius: 50px;
 
 /* Css para os Filhos */
-    display: grid;
-    grid-template-areas: 
+    display: flex;
+    /* grid-template-areas: 
     'logo conta conta'
-    'pesquisa pesquisa pesquisa';
+    'pesquisa pesquisa pesquisa'; */
+    justify-content: space-between;
+
     text-align: center;
     align-items: center;
 }
+.caba{
+    margin-left: 100px;
+    margin-right: 100px;
+}
 .logo{
-    grid-area: logo;
     max-height: 100px;
     padding-left: 5px;
     padding-top: 5px;
-    text-align: justify;
+    text-align: start;
+
 }
 .logo img{
     width: 80px;
@@ -67,8 +75,11 @@ body{
     grid-area: pesquisa;
 }
 .pesquisa label{
-    color: var(--Cinza_escuro);
+    color: var(--branco_puro);
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.pesquisa label:hover{
+    color: black;
 }
 .pesquisa input{
     border: none;
@@ -171,6 +182,9 @@ label{
     margin: 20px;
     
 }
+.card:hover{
+    box-shadow: 5px 10px 15px;
+}
 .dados_prod{
     background-color: var(--branco_puro);
     border-radius: 0 0 10px 10px;
@@ -205,6 +219,8 @@ label{
     padding: 10px;
     text-align: center;
     justify-content:space-between;
+    border: 1px solid;
+    border-radius: 10px;
 }
 .pagamentos img{
     max-width: 200px;
@@ -220,6 +236,9 @@ label{
     padding: 0%;
     
 }
+.footer_mobile{
+ display: none;       
+}
 
 
 
@@ -228,7 +247,7 @@ label{
     color: #ffffff;
 }
 
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 700px) {
     .cards{
         display: grid;
         grid-template-columns: auto auto;
@@ -272,5 +291,62 @@ label{
     .filtro{
         max-width: 300px;
     }
+    .fotos img{
+        max-width: 50px;
+    
+    }
+    .card{
+        margin: 0px;
+        max-width: 100px;
+    }
+    .footer_mobile{
+        display: flex;
+        flex-wrap: nowrap;
+        align-self: center;
+        text-align: center;
+        justify-content:center;
+        margin-top: 100px;
+        background-color: #706f6f;
+        min-width: 100vw;
+        max-height: 100vh;
+        margin-top: 400px;
 
+
+    }
+    
+    .footer_mobile h1, h2, h3, a{
+        font-size: 10px;
+    }
+
+    .pagamentos_mobile img{
+        max-width: 100px;
+    }
+    .conteiner_principal{
+        justify-content: center;
+    }
+    .redes_mobile img{
+        max-width: 100px;
+    }
+    .caba{
+        margin-left: 10px;
+        margin-right: 10px;
+        min-height: 120px;
+        justify-content: center;
+        align-items: center;
+    }
+    .conta li{
+        display: flex;
+        border-bottom: 1px solid black;
+        text-align: center;
+        justify-content: center;
+        margin-top: 0px;
+        
+    }
+    .conta ul{
+        padding: 0px;
+    }
+    .pesquisa{
+        display: flex;
+
+    }
 }
